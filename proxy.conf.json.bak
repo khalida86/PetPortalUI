@@ -1,0 +1,5 @@
+{
+"/Pet/*": {
+"target": "http://localhost:5081"
+}
+}

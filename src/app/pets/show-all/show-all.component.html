@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>Pet Id</th>
+            <th>Pet Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of PetsList">
+            <td>{{dataItem.id}}</td>
+            <td>{{dataItem.name}}</td>
+            <td>
+                <a [routerLink]="['viewdetails', dataItem.name ]">View</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

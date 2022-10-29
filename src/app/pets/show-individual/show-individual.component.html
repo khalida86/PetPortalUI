@@ -1,0 +1,29 @@
+  <table>
+    <thead>
+        <tr>
+            <th>Pet Id</th>
+            <th>Pet Name</th>
+            <th>Age</th>
+            <th>Owner</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>{{PetDetails.id}}</td>
+            <td>{{PetDetails.name}}</td>
+            <td>{{PetDetails.age}}</td>
+            <td>{{PetDetails.owner}}</td>
+            <!-- <td><a [routerLink]="['showcare']">Caring details</a></td> -->
+            <td><button mat-button (click)="openDialog(PetDetails.name)">Open Care Window</button></td>
+        </tr>
+    </tbody>
+</table>
+<!-- <app-show-care-info [CareSteps]='PetCare'></app-show-care-info> -->
+<!-- 
+<ng-template #dialogRef let-mydata>
+    <h3>Template dialog title</h3>
+    <p *ngIf="mydata">{{PetCare}}</p>
+    <button mat-button mat-dialog-close="Iam from dialog-land">Close</button>
+</ng-template> -->
+

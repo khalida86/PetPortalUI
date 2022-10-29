@@ -1,0 +1,31 @@
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Caring requirements
+  </button> -->
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-show-care-info>
+            <p>this is some information</p>>       
+          </app-show-care-info>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<h2>Modal Preview</h2>
+<p>This works</p>
+    <ul>
+        <li *ngFor="let CareStep of careSteps; let i = index" [attr.data-index]="i">
+            {{CareStep}}
+        </li>
+        <!-- <mat-dialog-content>
+            <li>{{ data.data }}</li>
+        </mat-dialog-content> -->
+    </ul>

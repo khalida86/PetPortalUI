@@ -13,27 +13,23 @@ import { MatDateFormats } from '@angular/material/core';
 
   export class ShowCareInfoComponent implements OnInit {
 
-  private animalName: string;
+  private animalId: string;
   private service: any;
   public careSteps:any;
-  constructor (@Inject(MAT_DIALOG_DATA)  animalName: string, 
+  constructor (@Inject(MAT_DIALOG_DATA)  animalId: string, 
     service: SharedService) {
       this.service = service;
-      this.animalName = animalName;
+      this.animalId = animalId;
     }
 
   @Input() CareSteps: string[]=[];
 
    ngOnInit(): void {
-
-          this.service.getCareSteps(this.animalName).subscribe({
-            next: (response: any) => {
-              
-              this.careSteps = response;
-              console.log(response);
-              
-            }
-          });
+    this.service.getCareSteps(this.animalId).subscribe({
+      next: (response: any) => {            
+        this.careSteps = response;
+        console.log(response);
+      }
+    });
    }
-
 }

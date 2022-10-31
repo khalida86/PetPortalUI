@@ -7,8 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShowCareInfoComponent } from '../show-care-info/show-care-info.component';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
-// import { ShowCareInfoComponent } from '../show-care-info/show-care-info.component';
-
 @Component({
   selector: 'app-show-individual',
   templateUrl: './show-individual.component.html',
@@ -16,7 +14,7 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 })
 
 export class ShowIndividualComponent implements OnInit {
-  name: any;
+  id: any;
 
   constructor(private service: SharedService, private router: Router, private route: ActivatedRoute, public dialog : MatDialog) { }
 
@@ -24,32 +22,29 @@ export class ShowIndividualComponent implements OnInit {
   PetCare: any;
 
   ngOnInit(): void {
-    
     this.route.paramMap.subscribe( {
       next: (params) => {
-        const name = params.get('name');
+        const id = params.get('id');
         console.log(params);
-        if (name) {
-          this.service.GetByName(name).subscribe({
+        if (id) {
+          this.service.GetById(id).subscribe({
             next: (response) => {
               this.PetDetails = response;
-              // console.log(response);
             }
           });
-          this.service.getCareSteps(name).subscribe(d=>{
+          this.service.getCareSteps(id).subscribe(d=>{
             this.PetCare=d;
-            // console.log(d);
           });
         }
       }
     })
   }
 
-  openDialog(name: string): void {
+  openDialog(id: string): void {
     let config: MatDialogConfig<string> = new MatDialogConfig();
     config.disableClose = false;
-    let d: any = {val : name};
-    config.data = name;
+    let d: any = {val : id};
+    config.data = id;
     this.dialog.open(ShowCareInfoComponent, config);
   }
 }

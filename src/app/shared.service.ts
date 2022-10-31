@@ -15,11 +15,11 @@ export class SharedService {
     return this.http.get<any>('/api/GetAll')
   }
 
-  GetByName(name: string):Observable<[]>{
-    return this.http.get<any>('/api/GetByName?name='+name)
+  GetById(id: string):Observable<[]>{
+    return this.http.get<any>('/api/GetById?id='+id)
   }
 
-  getCareSteps(name: string):Observable<any[]>{
-    return this.http.get<any>('/api/GetCareSteps?name='+name)
+  getCareSteps(id: string):Observable<any[]>{
+    return this.http.get<any>('/api/GetCareSteps?id='+id)
   }
 }

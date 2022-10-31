@@ -12,15 +12,8 @@ import { ShowCareInfoComponent } from './pets/show-care-info/show-care-info.comp
 export class AppComponent {
   title = 'petsportalui';
 
-  constructor(private dialogRef : MatDialog) {}
-  // constructor (private dialogRef : MatDialog) {}
-  
-  openDialog() {
-    this.dialogRef.open(ShowCareInfoComponent)
-  }
+  constructor() {}
 
   ngOnInit() {
-    
   }
-
 }

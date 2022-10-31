@@ -8,8 +8,8 @@ import { ShowIndividualComponent } from './pets/show-individual/show-individual.
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'pets', component:PetsComponent},
-  {path:'pets/viewdetails/:name', component:ShowIndividualComponent},
-  {path:'pets/viewdetails/:name/showcare', component:ShowCareInfoComponent}
+  {path:'pets/viewdetails/:id', component:ShowIndividualComponent},
+  {path:'pets/viewdetails/:id/showcare', component:ShowCareInfoComponent}
 ];
 
 @NgModule({

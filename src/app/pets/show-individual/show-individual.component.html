@@ -1,11 +1,12 @@
-  <table>
+  <table class="table table-bordered">
     <thead>
         <tr>
             <th>Pet Id</th>
             <th>Pet Name</th>
             <th>Age</th>
             <th>Owner</th>
-            <th></th>
+            <th>Type of animal</th>
+            <th><strong>Action items</strong></th>
         </tr>
     </thead>
     <tbody>
@@ -14,7 +15,10 @@
             <td>{{PetDetails.name}}</td>
             <td>{{PetDetails.age}}</td>
             <td>{{PetDetails.owner}}</td>
-            <td><button mat-button (click)="openDialog(PetDetails.id)">Open Care Window</button></td>
+            <td>{{PetDetails.type}}</td>
+            <td align="center">
+                <button type="button" class="btn btn-dark" mat-button (click)="openDialog(PetDetails.id)">Open Care Window</button>
+            </td>
         </tr>
     </tbody>
 </table>

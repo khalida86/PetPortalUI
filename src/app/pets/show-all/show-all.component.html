@@ -1,4 +1,4 @@
-<table>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Pet Id</th>
@@ -10,8 +10,8 @@
         <tr *ngFor="let dataItem of PetsList">
             <td>{{dataItem.id}}</td>
             <td>{{dataItem.name}}</td>
-            <td>
-                <a [routerLink]="['viewdetails', dataItem.id ]">View</a>
+            <td align="center">
+                <button type="button" class="btn btn-dark" [routerLink]="['viewdetails', dataItem.id ]">View details</button>
             </td>
         </tr>
     </tbody>

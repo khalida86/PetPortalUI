@@ -6,15 +6,18 @@
             <th>Age</th>
             <th>Owner</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
           <tr>
-            <td>{{PetDetails.id}}</td>
-            <td>{{PetDetails.name}}</td>
-            <td>{{PetDetails.age}}</td>
-            <td>{{PetDetails.owner}}</td>
-            <td><button mat-button (click)="openDialog(PetDetails.id)">Open Care Window</button></td>
+            <td>{{PetDetails.petId}}</td>
+            <td>{{PetDetails.petName}}</td>
+            <td>{{PetDetails.petAge}}</td>
+            <td>{{PetDetails.petOwner}}</td>
+            <!-- <td><button mat-button (click)="editDialog(PetDetails.petId)">Edit</button></td> -->
+            <td><button mat-button (click)="editDialogTwo(PetDetails)">Edit</button></td>
+            <td><button mat-button (click)="openDialog(PetDetails.petId)">Open Care Window</button></td>
         </tr>
     </tbody>
 </table>

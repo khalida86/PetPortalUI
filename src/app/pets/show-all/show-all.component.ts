@@ -16,7 +16,7 @@ export class ShowAllComponent implements OnInit {
   }
 
   refreshPetsList(){
-    this.service.GetAll().subscribe(d=>{
+    this.service.getAll().subscribe(d=>{
       this.PetsList=d;
       console.log(this.PetsList);
     });

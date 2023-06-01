@@ -8,10 +8,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of PetsList">
-            <td>{{dataItem.id}}</td>
-            <td>{{dataItem.name}}</td>
+            <td>{{dataItem.petId}}</td>
+            <td>{{dataItem.petName}}</td>
             <td>
-                <a [routerLink]="['viewdetails', dataItem.id ]">View</a>
+                <a [routerLink]="['viewdetails', dataItem.petId ]">View</a>
             </td>
         </tr>
     </tbody>

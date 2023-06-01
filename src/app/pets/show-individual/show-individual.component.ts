@@ -6,6 +6,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShowCareInfoComponent } from '../show-care-info/show-care-info.component';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { EditPetComponent } from '../edit-pet/edit-pet.component';
+//import { EditPetComponent } from '../edit-pet/edit-pet.component';
 
 @Component({
   selector: 'app-show-individual',
@@ -27,7 +29,7 @@ export class ShowIndividualComponent implements OnInit {
         const id = params.get('id');
         console.log(params);
         if (id) {
-          this.service.GetById(id).subscribe({
+          this.service.getById(id).subscribe({
             next: (response) => {
               this.PetDetails = response;
             }
@@ -46,5 +48,13 @@ export class ShowIndividualComponent implements OnInit {
     let d: any = {val : id};
     config.data = id;
     this.dialog.open(ShowCareInfoComponent, config);
+  }
+
+  editDialogTwo(response: []): void{
+    let config: MatDialogConfig<[]> = new MatDialogConfig();
+    config.disableClose = false;
+    let d: any = {val : response};
+    config.data = response;
+    this.dialog.open(EditPetComponent, config);
   }
 }

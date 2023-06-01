@@ -9,17 +9,25 @@ import { ShowAllComponent } from './pets/show-all/show-all.component';
 })
 
 export class SharedService {
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
   
-  GetAll():Observable<any[]>{
-    return this.http.get<any>('/api/GetAll')
+  getAll():Observable<any[]>{
+    return this.http.get<any>('/api/GetAllPets')
   }
 
-  GetById(id: string):Observable<[]>{
-    return this.http.get<any>('/api/GetById?id='+id)
+  getById(petId: string):Observable<[]>{
+    return this.http.get<any>('/api/GetPetById/'+petId)
   }
 
-  getCareSteps(id: string):Observable<any[]>{
-    return this.http.get<any>('/api/GetCareSteps?id='+id)
+  getCareSteps(petId: string):Observable<any[]>{
+    return this.http.get<any>('/api/GetPetCareSteps/'+petId)
+  }
+
+  updatePet(petId: string, petName: string, petAge: string): void {
+    const myUrlWithParams  = new URL("/api");
+    myUrlWithParams.searchParams.append("petId", petId);
+    myUrlWithParams.searchParams.append("petName", petName);
+    myUrlWithParams.searchParams.append("petAge", petAge);
+    this.http.put(myUrlWithParams.href, null)
   }
 }
